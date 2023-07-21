@@ -1,4 +1,4 @@
-import { ODataHttpClient } from "@odata2ts/http-client-api";
+import { ODataClient } from "@odata2ts/odata-client-api";
 import { ODataService } from "@odata2ts/odata-service";
 import { HandlingUnitId } from "./ZppBdeSrvModel";
 import { QHandlingUnitId } from "./QZppBdeSrv";
@@ -8,7 +8,7 @@ import {
 } from "./service/HandlingUnitService";
 
 export class ZppBdeSrvService<
-  ClientType extends ODataHttpClient
+  ClientType extends ODataClient
 > extends ODataService<ClientType> {
   public handlingUnits(): HandlingUnitCollectionService<ClientType>;
   public handlingUnits(id: HandlingUnitId): HandlingUnitService<ClientType>;

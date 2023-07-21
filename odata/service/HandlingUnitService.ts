@@ -1,4 +1,4 @@
-import { ODataHttpClient } from "@odata2ts/http-client-api";
+import { ODataClient } from "@odata2ts/odata-client-api";
 import {
   EntityTypeServiceV2,
   EntitySetServiceV2,
@@ -11,7 +11,7 @@ import {
 import { QHandlingUnit, qHandlingUnit, QHandlingUnitId } from "../QZppBdeSrv";
 
 export class HandlingUnitService<
-  ClientType extends ODataHttpClient
+  ClientType extends ODataClient
 > extends EntityTypeServiceV2<
   ClientType,
   HandlingUnit,
@@ -24,7 +24,7 @@ export class HandlingUnitService<
 }
 
 export class HandlingUnitCollectionService<
-  ClientType extends ODataHttpClient
+  ClientType extends ODataClient
 > extends EntitySetServiceV2<
   ClientType,
   HandlingUnit,

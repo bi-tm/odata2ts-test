@@ -1,3 +1,4 @@
+import { stringToNumberConverter } from "@odata2ts/converter-v2-to-v4";
 import {
   QStringV2Path,
   QStringNumberV2Path,
@@ -10,7 +11,10 @@ import { HandlingUnitId } from "./ZppBdeSrvModel";
 export class QHandlingUnit extends QueryObject {
   public readonly ident = new QStringV2Path(this.withPrefix("Ident"));
   public readonly hutyp = new QStringV2Path(this.withPrefix("Hutyp"));
-  public readonly qty = new QStringNumberV2Path(this.withPrefix("Qty"));
+  public readonly qty = new QStringNumberV2Path(
+    this.withPrefix("Qty"),
+    stringToNumberConverter
+  );
   public readonly unit = new QStringV2Path(this.withPrefix("Unit"));
 }
 
